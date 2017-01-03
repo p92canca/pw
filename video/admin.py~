@@ -1,5 +1,5 @@
 from django.contrib import admin
-from video.models import Video, Comentario
+from video.models import Videos, Comentarios
 
 # Register your models here.
 
