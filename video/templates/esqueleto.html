@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>DjangoTube | {% block titulo %} {% endblock %}</title>
+    <title>Django Videos | {% block titulo %} {% endblock %}</title>
 
     <!-- Bootstrap -->
-    <link href="{{MEDIA_URL}}css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">DjangoTube</a>
+          <a class="navbar-brand" href="/">Django Videos</a>
         </div>
         <div class="navbar-left" id="esconder" >
           <ul class="nav navbar-nav">
@@ -67,7 +68,7 @@
       </div>
     </div>
       <footer>
-        <p>&copy; 2015 Juan Jes&uacute;s Carmona Tejero</p>
+        <p>&copy; 2017 Alberto Cañete Carpintero</p>
       </footer>
     </div> <!-- /container -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

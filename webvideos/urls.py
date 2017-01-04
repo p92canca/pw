@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from video import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^prueba/', include('video.urls')),
+    url(r'^mostrarresultados/$', views.mostrarResultados),
+    url(r'^subirvideo/$',views.subirVideo),
+    url(r'^$', views.mostrarPrincipal),
+    url(r'^prueba/', views.index),
+    url(r'^ver/(?P<id_video>.*)/$',views.verVideo),
+    url(r'^logout/$',views.usuario_logout),
+    url(r'^login/$',views.usuario_login),
+    url(r'^registro/$',views.registro_usuario),
 ]

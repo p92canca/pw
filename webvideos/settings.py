@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#Ruta Media
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/') #ruta donde se guarda lo multimedia (videos,musica,imagenes...)  	#NUEVO
+MEDIA_URL = os.path.join(BASE_DIR,'paginavideo/media/') #alias de la ruta										#NUEVO
+
 
 # Application definition
 
@@ -37,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'video',
+    'video',	#NUEVO
 ]
 
 MIDDLEWARE = [
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'webvideos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'webvideos/templates')],	#NUEVO
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'es'	#NUEVO
 
 TIME_ZONE = 'UTC'
 
@@ -114,8 +118,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    '/home/alberto/webvideos/media'
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+#STATIC_ROOT = os.path.join(BASE_DIR,'static/') #ruta donde se guarda lo multimedia (videos,musica,imagenes...)  	#NUEVO
 STATIC_URL = '/static/'
