@@ -29,8 +29,7 @@ ALLOWED_HOSTS = []
 
 #Ruta Media
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/') #ruta donde se guarda lo multimedia (videos,musica,imagenes...)  	#NUEVO
-MEDIA_URL = os.path.join(BASE_DIR,'paginavideo/media/') #alias de la ruta										#NUEVO
-
+MEDIA_URL = os.path.join(BASE_DIR,'media/') #alias de la ruta													#NUEVO
 
 # Application definition
 
@@ -67,6 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -121,7 +122,11 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    '/home/alberto/webvideos/media'
+    '/home/alberto/webvideos/media',
+]
+
+STATICFILES_DIRS = [
+	'/home/alberto/webvideos/media/videos',
 ]
 
 # Static files (CSS, JavaScript, Images)

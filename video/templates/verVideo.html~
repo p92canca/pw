@@ -5,8 +5,7 @@
 {% block contenido %}
 
 <h1>{{video.titulo_video}}</h1>
-<video width="600" src="{{MEDIA_URL}}{{video.archivo_video}}" controls>
-</video>
+<video width="600" src="{% get_media_prefix %}{{video.archivo_video}}" controls></video>
 
 <div class="panel panel-default">
   <div class="panel-heading">Descripcion</div>

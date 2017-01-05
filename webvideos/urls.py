@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from video import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +29,4 @@ urlpatterns = [
     url(r'^logout/$',views.usuario_logout),
     url(r'^login/$',views.usuario_login),
     url(r'^registro/$',views.registro_usuario),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
