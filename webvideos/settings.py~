@@ -125,10 +125,6 @@ STATICFILES_FINDERS = [
     '/home/alberto/webvideos/media',
 ]
 
-STATICFILES_DIRS = (
-	'/home/alberto/webvideos/media/videos',
-)
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 #STATIC_ROOT = os.path.join(BASE_DIR,'static/') #ruta donde se guarda lo multimedia (videos,musica,imagenes...)  	#NUEVO

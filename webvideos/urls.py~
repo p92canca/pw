@@ -24,7 +24,6 @@ urlpatterns = [
     url(r'^mostrarresultados/$', views.mostrarResultados),
     url(r'^subirvideo/$',views.subirVideo),
     url(r'^$', views.mostrarPrincipal),
-    url(r'^prueba/', views.index),
     url(r'^ver/(?P<id_video>.*)/$',views.verVideo),
     url(r'^logout/$',views.usuario_logout),
     url(r'^login/$',views.usuario_login),

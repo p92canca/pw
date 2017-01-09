@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here.
 
@@ -53,14 +54,14 @@ def subirVideo(request):
             return render(request, 'subirVideo.html',{'formulario':formulario, 'booleano':True,'titulo':"Formulario valido"})
         else:
             return render(request, 'subirVideo.html',{'formulario':formulario, 'booleano':False,'titulo':"Formulario no valido"})
-
-
+            
     return render(request, 'subirVideo.html',{'formulario':formulario,'titulo':"Subir Video"})
     
 def mostrarPrincipal(request):
     r=models.Video.objects.all().filter(privacidad_video=False)
     return render(request,'mostrarResultados.html',{'titulo':"Pagina principal", 'resultados':r})
 
+@login_required(login_url='/login')
 def usuario_logout(request):
     logout(request)
     return HttpResponseRedirect('/')
